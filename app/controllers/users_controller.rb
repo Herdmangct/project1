@@ -8,6 +8,7 @@ class UsersController < ApplicationController
 
   ######## # Maybe show User profile here?
   def show
+    
   end
   ########
 

@@ -13,11 +13,11 @@ class SessionController < ApplicationController
       # store their id in the session hash and redirect them to the root path.
       session[:user_id] = user.id
       flash[:notice] = "User created!"
-      redirect_to root_path
+      redirect_to show_user_path
     else
       # If the user cannot be authenticated, redirect them to the login_path.
       flash[:error] = "User could not be created!"
-      redirect_to login_path
+      redirect_to show_user_path
     end
   end
 

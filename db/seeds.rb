@@ -26,7 +26,7 @@ puts "Creating Ingredients"
 i1 = Ingredient.create :name => "Diced Beef Casserole", :quantity_in_stock => 10, :quantity_required => 10, :supplier => "Woolworths", :price => 8
 i2 = Ingredient.create :name => "Fresh Brown Onion", :quantity_in_stock => 10, :quantity_required => 10, :supplier => "Woolworths", :price => 2.90
 i3 = Ingredient.create :name => "Fresh Potato Brushed", :quantity_in_stock => 10, :quantity_required => 10, :supplier => "Woolworths", :price => 3.50
-i4 = Ingredient.create :name => "Woolworths Peanuts Unsalted 375g", :quantity_in_stock => 10, :quantity_required => 10, :supplier => "Woolworths", :price => 2.10
+i4 = Ingredient.create :name => "Woolworths Peanuts Unsalted", :quantity_in_stock => 10, :quantity_required => 10, :supplier => "Woolworths", :price => 2.10
 
 # LEMON BEEF
 i5 = Ingredient.create :name => "Msa Australian Beef Rump", :quantity_in_stock => 10, :quantity_required => 10, :supplier => "Woolworths", :price => 23
@@ -40,7 +40,7 @@ i9 = Ingredient.create :name => "Fresh chilli", :quantity_in_stock => 10, :quant
 # Lazana
 # Linguine Meatballs
 i10 = Ingredient.create :name => "San Remo Linguine Pasta", :quantity_in_stock => 10, :quantity_required => 10, :supplier => "Woolworths", :price => 1.95
-i11 = Ingredient.create :name => "Woolworths Lean Beef Mince 500g", :quantity_in_stock => 10, :quantity_required => 10, :supplier => "Woolworths", :price => 13
+i11 = Ingredient.create :name => "Woolworths Lean Beef Mince", :quantity_in_stock => 10, :quantity_required => 10, :supplier => "Woolworths", :price => 13
 i12 = Ingredient.create :name => "Leggos Tomato Paste", :quantity_in_stock => 10, :quantity_required => 10, :supplier => "Woolworths", :price => 7.40
 
 # Veal Scallopini
@@ -51,9 +51,53 @@ i14 = Ingredient.create :name => "Western Star Original Butter Block", :quantity
 i15 = Ingredient.create :name => "Woolworths Bread Sourdough Loaf each", :quantity_in_stock => 10, :quantity_required => 10, :supplier => "Woolworths", :price => 5.50
 i16 = Ingredient.create :name => "Greek Family Farm Organic Greek Feta 50g", :quantity_in_stock => 10, :quantity_required => 10, :supplier => "Woolworths", :price => 50
 
-# Quantity.destroy_all
-# puts "Creating Quantities"
-# q1 = Quantity.create :measurement
+Quantity.destroy_all
+puts "Creating Quantities"
+# Cozy Thai
+# MASMAN CURRY
+# Diced Beef Casserole
+q1 = Quantity.create :measurement => 500, :unit_of_measurement => "gram"
+# Fresh Brown Onion
+q2 = Quantity.create :measurement => 0.5, :unit_of_measurement => "unit"
+# Fresh Potato Brushed
+q3 = Quantity.create :measurement => 1, :unit_of_measurement => "unit"
+# Woolworths Peanuts Unsalted
+q4 = Quantity.create :measurement => 50, :unit_of_measurement => "gram"
+
+# LEMON BEEF
+# Msa Australian Beef Rump
+q5 = Quantity.create :measurement => 250, :unit_of_measurement => "gram"
+# Fresh Broccoli
+q6 = Quantity.create :measurement => 250, :unit_of_measurement => "gram"
+
+# PAD SEE IW
+# Thick Rice Noodles
+q7 = Quantity.create :measurement => 100, :unit_of_measurement => "gram"
+# Eggs
+q8 = Quantity.create :measurement => 1, :unit_of_measurement => "unit"
+# Fresh chilli
+q9 = Quantity.create :measurement => 1, :unit_of_measurement => "unit"
+
+# Lazana
+# Linguine Meatballs
+# San Remo Linguine Pasta
+q10 = Quantity.create :measurement => 100, :unit_of_measurement => "gram"
+# Woolworths Lean Beef Mince
+q11 = Quantity.create :measurement => 300, :unit_of_measurement => "gram"
+# Leggos Tomato Paste
+q12 = Quantity.create :measurement => 50, :unit_of_measurement => "gram"
+
+# Veal Scallopini
+# Woolworths Beef Blade Boneless Steak
+q13 = Quantity.create :measurement => 400, :unit_of_measurement => "gram"
+# Western Star Original Butter Block
+q14 = Quantity.create :measurement => 20, :unit_of_measurement => "gram"
+
+# Baked Sour Dough
+# Woolworths Bread Sourdough Loaf each
+q15 = Quantity.create :measurement => 1, :unit_of_measurement => "unit"
+# Greek Family Farm Organic Greek Feta
+q16 = Quantity.create :measurement => 20, :unit_of_measurement => "gram"
 
 
 
@@ -66,23 +110,33 @@ u1.meals << m1 << m2 << m3
 u2.meals << m4 << m5 << m6
 
 # Meals (one to many) Quantities
+# ## Cozy Thai
+m1.quantities << q1 << q2 << q3 << q4
+m2.quantities << q5 << q6
+m3.quantities << q7 << q8 << q9
+
+# ## Lazana
+m4.quantities << q10 << q11 << q12
+m5.quantities << q13 << q14
+m6.quantities << q15 << q16
 
 # Ingredients (one to many) Quantities
-
-
-
-
-
-
-
-####################################
-# Meals (many to many) Ingredients
 # ## Cozy Thai
-# m1.ingredients << i1 << i2 << i3 << i4
-# m2.ingredients << i5 << i6
-# m3.ingredients << i7 << i8 << i9
-#
-# ## Lazana
-# m4.ingredients << i10 << i11 << i12
-# m5.ingredients << i13 << i14
-# m6.ingredients << i15 << i16
+i1.quantities << q1
+i2.quantities << q2
+i3.quantities << q3
+i4.quantities << q4
+i5.quantities << q5
+i6.quantities << q6
+i7.quantities << q7
+i8.quantities << q8
+i9.quantities << q9
+
+# Lazana
+i10.quantities << q10
+i11.quantities << q11
+i12.quantities << q12
+i13.quantities << q13
+i14.quantities << q14
+i15.quantities << q15
+i16.quantities << q16
