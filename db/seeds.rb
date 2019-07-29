@@ -2,9 +2,9 @@
 # Initialize to start of week 1
 User.destroy_all
 puts "Creating Users"
-a1 = User.create :email => "Graham@ga.co", :name => "Graham", :admin => true
-u1 = User.create :email => "CozyThai@ga.co", :name => "CozyThai"
-u2 = User.create :email => "Lazana@ga.co", :name => "Lazana"
+a1 = User.create :email => "Graham@ga.co", :name => "Graham", :password => 'chicken', :admin => true
+u1 = User.create :email => "CozyThai@ga.co", :name => "CozyThai", :password => 'chicken'
+u2 = User.create :email => "Lazana@ga.co", :name => "Lazana", :password => 'chicken'
 
 Meal.destroy_all
 puts "Creating Meals"
@@ -51,6 +51,12 @@ i14 = Ingredient.create :name => "Western Star Original Butter Block", :quantity
 i15 = Ingredient.create :name => "Woolworths Bread Sourdough Loaf each", :quantity_in_stock => 10, :quantity_required => 10, :supplier => "Woolworths", :price => 5.50
 i16 = Ingredient.create :name => "Greek Family Farm Organic Greek Feta 50g", :quantity_in_stock => 10, :quantity_required => 10, :supplier => "Woolworths", :price => 50
 
+# Quantity.destroy_all
+# puts "Creating Quantities"
+# q1 = Quantity.create :measurement
+
+
+
 puts "Adding Associations"
 # Users (one to many) Meals
 ## Cozy Thai
@@ -59,13 +65,24 @@ u1.meals << m1 << m2 << m3
 ## Lazana
 u2.meals << m4 << m5 << m6
 
-# Meals (many to many) Ingredients
-## Cozy Thai
-m1.ingredients << i1 << i2 << i3 << i4
-m2.ingredients << i5 << i6
-m3.ingredients << i7 << i8 << i9
+# Meals (one to many) Quantities
 
-## Lazana
-m4.ingredients << i10 << i11 << i12
-m5.ingredients << i13 << i14
-m6.ingredients << i15 << i16
+# Ingredients (one to many) Quantities
+
+
+
+
+
+
+
+####################################
+# Meals (many to many) Ingredients
+# ## Cozy Thai
+# m1.ingredients << i1 << i2 << i3 << i4
+# m2.ingredients << i5 << i6
+# m3.ingredients << i7 << i8 << i9
+#
+# ## Lazana
+# m4.ingredients << i10 << i11 << i12
+# m5.ingredients << i13 << i14
+# m6.ingredients << i15 << i16
