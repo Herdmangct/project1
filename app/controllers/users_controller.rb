@@ -1,16 +1,14 @@
 class UsersController < ApplicationController
-  before_action :check_for_login, :only => [:index, :edit, :update]
+  before_action :check_for_login, :only => [:index, :show, :edit, :update]
   before_action :check_for_admin, :only => [:index]
 
   def index
     @users = User.all
   end
 
-  ######## # Maybe show User profile here?
+  # User profile
   def show
-    
   end
-  ########
 
   def new
     @user = User.new

@@ -1,2 +1,58 @@
-<h1>Meals#show</h1>
-<p>Find me in app/views/meals/show.html.erb</p>
+<h1>Ingredients for <%= @meal.name.downcase.split(" ").map {|s| s.capitalize}.join(" ") %></h1>
+
+<div class="row">
+
+  <div class="col-md-2">
+    <h5>Ingredient</h5>
+  </div>
+
+  <div class="col-md-2">
+    <h5>Quantity in Stock</h5>
+  </div>
+
+  <div class="col-md-2">
+    <h5>Quantity Required</h5>
+  </div>
+
+  <div class="col-md-2">
+    <h5>Supplier</h5>
+  </div>
+
+  <div class="col-md-2">
+    <h5>Price</h5>
+  </div>
+
+</div>
+
+<% @meal.ingredients.each do |ingredient| %>
+
+  <div class="mealsShow">
+
+    <div class="row">
+
+      <div class="col-md-2">
+        <%= link_to ingredient.name, ingredient %>
+      </div>
+
+      <div class="col-md-2">
+        <%= ingredient.quantity_in_stock %>
+      </div>
+
+      <div class="col-md-2">
+        <%= ingredient.quantity_required %>
+      </div>
+
+      <div class="col-md-2">
+        <%= ingredient.supplier %>
+      </div>
+
+      <div class="col-md-2">
+        <%= ingredient.price %>
+      </div>
+
+    </div>
+
+    <%= button_to "Delete", ingredient, :method => 'delete'%>
+  </div>
+
+<% end %>

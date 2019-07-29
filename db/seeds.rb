@@ -23,10 +23,10 @@ Ingredient.destroy_all
 puts "Creating Ingredients"
 # Cozy Thai
 # MASMAN CURRY
-i1 = Ingredient.create :name => "Diced Beef Casserole", :quantity_in_stock => 10, :quantity_required => 10, :supplier => "Woolworths", :price => 8
-i2 = Ingredient.create :name => "Fresh Brown Onion", :quantity_in_stock => 10, :quantity_required => 10, :supplier => "Woolworths", :price => 2.90
-i3 = Ingredient.create :name => "Fresh Potato Brushed", :quantity_in_stock => 10, :quantity_required => 10, :supplier => "Woolworths", :price => 3.50
-i4 = Ingredient.create :name => "Woolworths Peanuts Unsalted", :quantity_in_stock => 10, :quantity_required => 10, :supplier => "Woolworths", :price => 2.10
+i1 = Ingredient.create :name => "Diced Beef Casserole", :quantity_in_stock => 10, :quantity_required => 10, :supplier => "Woolworths", :supplier_url => "https://www.woolworths.com.au/shop/productdetails/675483/diced-beef-casserole", :price => 8
+i2 = Ingredient.create :name => "Fresh Brown Onion", :quantity_in_stock => 10, :quantity_required => 10, :supplier => "Woolworths", :supplier_url => "https://www.woolworths.com.au/shop/productdetails/144329/onion-brown", :price => 2.90
+i3 = Ingredient.create :name => "Fresh Potato Brushed", :quantity_in_stock => 10, :quantity_required => 10, :supplier => "Woolworths", :supplier_url => "https://www.woolworths.com.au/shop/productdetails/246566/potato-brushed", :price => 3.50
+i4 = Ingredient.create :name => "Woolworths Peanuts Unsalted", :quantity_in_stock => 10, :quantity_required => 10, :supplier => "Woolworths", :supplier_url => "https://www.woolworths.com.au/shop/productdetails/598179/woolworths-peanuts-unsalted", :price => 2.10
 
 # LEMON BEEF
 i5 = Ingredient.create :name => "Msa Australian Beef Rump", :quantity_in_stock => 10, :quantity_required => 10, :supplier => "Woolworths", :price => 23

@@ -1,2 +1,10 @@
-<h1>Meals#index</h1>
-<p>Find me in app/views/meals/index.html.erb</p>
+<h1>Your Meals</h1>
+
+<% @current_user.meals.each do |meal| %>
+
+  <div class="mealsIndex">
+    <p><%= link_to meal.name, meal %></p>
+    <%= button_to "Delete", meal, :method => 'delete'%>
+  </div>
+
+<% end %>
