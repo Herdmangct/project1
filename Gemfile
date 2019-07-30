@@ -51,3 +51,4 @@ gem 'rails_12factor', group: :production
 gem "jquery-rails"
 gem "bootstrap"
 gem 'rails-erd', group: :development
+gem 'clipboard-rails'

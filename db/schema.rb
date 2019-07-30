@@ -10,24 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_30_014639) do
+ActiveRecord::Schema.define(version: 2019_07_30_035658) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "ingredients", force: :cascade do |t|
-    t.string "name"
-    t.float "quantity_in_stock"
-    t.float "quantity_required"
-    t.string "supplier"
-    t.float "price"
+    t.string "name", default: ""
+    t.float "quantity_in_stock", default: 0.0
+    t.float "quantity_required", default: 0.0
+    t.string "supplier", default: ""
+    t.float "price", default: 0.0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "unit_of_measurement"
-    t.float "atomic_unit"
-    t.string "supplier_url"
-    t.string "product_name"
-    t.string "supplier_email"
+    t.string "unit_of_measurement", default: "unit"
+    t.float "atomic_unit", default: 0.0
+    t.string "supplier_url", default: ""
+    t.string "product_name", default: ""
+    t.string "supplier_email", default: ""
   end
 
   create_table "meals", force: :cascade do |t|

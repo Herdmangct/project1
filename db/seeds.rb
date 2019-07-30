@@ -41,7 +41,7 @@ ig9 = Ingredient.create :product_name => "Saxa Natural Sea Salt Grinder 90g", :n
 
 # Cozy Thai
 # MASMAN CURRY
-i1 = Ingredient.create :product_name => "Diced Beef Casserole", :name => "Beef Cubes", :quantity_in_stock => 10, :quantity_required => 10, :supplier => "Woolworths", :supplier_url => "https://www.woolworths.com.au/shop/productdetails/675483/diced-beef-casserole", :price => 8
+i1 = Ingredient.create :product_name => "Diced Beef Casserole", :name => "Beef Cubes", :quantity_in_stock => 10, :quantity_required => 10, :supplier => "Woolworths", :supplier_url => "https://www.woolworths.com.au/shop/productdetails/675483/diced-beef-casserole", :price => 8, :supplier_email => "woolworths@ga.co"
 i2 = Ingredient.create :product_name => "Fresh Brown Onion", :name => "Brown Onion", :quantity_in_stock => 10, :quantity_required => 10, :supplier => "Woolworths", :supplier_url => "https://www.woolworths.com.au/shop/productdetails/144329/onion-brown", :price => 2.90
 i3 = Ingredient.create :product_name => "Fresh Potato Brushed", :name => "Potato", :quantity_in_stock => 10, :quantity_required => 10, :supplier => "Woolworths", :supplier_url => "https://www.woolworths.com.au/shop/productdetails/246566/potato-brushed", :price => 3.50
 i4 = Ingredient.create :product_name => "Woolworths Peanuts Unsalted", :name => "Peanuts", :quantity_in_stock => 10, :quantity_required => 10, :supplier => "Woolworths", :supplier_url => "https://www.woolworths.com.au/shop/productdetails/598179/woolworths-peanuts-unsalted", :price => 2.10

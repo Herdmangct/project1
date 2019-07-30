@@ -35,7 +35,7 @@
       </div>
 
       <div class="col-md-2">
-        <%= ingredient.quantity_in_stock %>
+        <%= pluralize ingredient.quantity_in_stock, ingredient.unit_of_measurement %>
       </div>
 
       <div class="col-md-2">
@@ -43,11 +43,23 @@
       </div>
 
       <div class="col-md-2">
-        <%= ingredient.supplier %>
+        <%= link_to(ingredient.supplier, ingredient.supplier_url) + "#{ingredient.supplier_email}"%>
+      </div>
+
+      <div class="col-md-2">
+        <%= link_to ingredient.supplier, ingredient.supplier_url %>
       </div>
 
       <div class="col-md-2">
         <%= ingredient.price %>
+      </div>
+
+      <div class="col-md-2">
+        <%= link_to ingredient.atomic_unit, ingredient %>
+      </div>
+
+      <div class="col-md-2">
+        <%= link_to ingredient.atomic_unit, ingredient %>
       </div>
 
     </div>

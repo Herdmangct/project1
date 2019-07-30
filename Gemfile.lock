@@ -56,6 +56,7 @@ GEM
     builder (3.2.3)
     byebug (11.0.1)
     choice (0.2.0)
+    clipboard-rails (1.7.1)
     coderay (1.1.2)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
@@ -205,6 +206,7 @@ DEPENDENCIES
   bootsnap (>= 1.1.0)
   bootstrap
   byebug
+  clipboard-rails
   coffee-rails (~> 4.2)
   jbuilder (~> 2.5)
   jquery-rails

@@ -1,11 +1,14 @@
 class MealsController < ApplicationController
   before_action :check_for_login
 
+  # DONE
   def index
   end
-  
+
+  # DONE
   def show
     @meal = Meal.find params[:id]
+
   end
 
   def new
