@@ -1,2 +1,77 @@
 <h1>Ingredients#show</h1>
 <p>Find me in app/views/ingredients/show.html.erb</p>
+
+<h1>Ingredients for <%= @meal.name.downcase.split(" ").map {|s| s.capitalize}.join(" ") %></h1>
+
+<div class="row">
+
+  <div class="col-md-2">
+    <h5>Ingredient</h5>
+  </div>
+
+  <div class="col-md-2">
+    <h5>Quantity in Stock</h5>
+  </div>
+
+  <div class="col-md-2">
+    <h5>Quantity Required</h5>
+  </div>
+
+  <div class="col-md-2">
+    <h5>Supplier</h5>
+  </div>
+
+  <div class="col-md-2">
+    <h5>Price</h5>
+  </div>
+
+  <div class="col-md-2">
+    <h5>Atomic Unit</h5>
+  </div>
+
+</div>
+
+<% @meal.ingredients.each do |ingredient| %>
+
+  <div class="mealsShow">
+
+    <div class="row">
+
+      <div class="col-md-2">
+        <%= link_to ingredient.name, ingredient %>
+      </div>
+
+      <div class="col-md-2">
+        <%= pluralize ingredient.quantity_in_stock, ingredient.unit_of_measurement %>
+      </div>
+
+      <div class="col-md-2">
+        <%= pluralize ingredient.quantity_required, ingredient.unit_of_measurement %>
+      </div>
+
+      <div class="col-md-2">
+        <% if ingredient.supplier_url.present? %>
+          <%= link_to(ingredient.supplier, ingredient.supplier_url) %>
+        <% else %>
+          <%= ingredient.supplier_email %>
+        <% end %>
+      </div>
+
+      <div class="col-md-2">
+        <%= "#{number_to_currency ingredient.price} / #{ingredient.unit_of_measurement}" %>
+      </div>
+
+      <div class="col-md-2">
+        <%= pluralize ingredient.atomic_unit, ingredient.unit_of_measurement %>
+      </div>
+
+    </div>
+    
+    <div class="controls">
+      <%= button_to "Edit", edit_meal_path() %>
+      <%= button_to "Delete", ingredient, :method => 'delete'%>
+    </div>
+
+  </div>
+
+<% end %>

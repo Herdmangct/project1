@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :check_for_login, :only => [:index, :show, :edit, :update]
-  before_action :check_for_admin, :only => [:index]
+  before_action :check_for_admin, :only => [:index, :destroy]
 
   def index
     @users = User.all
@@ -30,7 +30,7 @@ class UsersController < ApplicationController
 
   def update
     @current_user.update user_params
-    redirect_to root_path # TODO: Change this to User Profile page
+    redirect_to show_user_path 
   end
 
   def destroy

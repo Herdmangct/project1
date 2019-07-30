@@ -1,10 +1,71 @@
-<h1>Your Meals</h1>
+<div class="row">
+  <div class="col-md-2">
+    <h1>Your Meals</h1>
+  </div>
+  <div class="col-md-2">
+    <%= link_to "New", new_meal_path %>
+  </div>
+</div>
+
+
+<div class="row">
+
+  <div class="col-md-2">
+    <h5>Meal</h5>
+  </div>
+
+  <div class="col-md-2">
+    <h5>Quantity in Stock</h5>
+  </div>
+
+  <div class="col-md-2">
+    <h5>Quantity Required</h5>
+  </div>
+
+  <div class="col-md-2">
+    <h5>Base Price</h5>
+  </div>
+
+  <div class="col-md-2">
+    <h5>Sales Price</h5>
+  </div>
+
+</div>
 
 <% @current_user.meals.each do |meal| %>
 
   <div class="mealsIndex">
-    <p><%= link_to meal.name, meal %></p>
-    <%= button_to "Delete", meal, :method => 'delete'%>
+    <div class="row">
+
+      <div class="col-md-2">
+        <%= link_to meal.name, meal %>
+      </div>
+
+      <div class="col-md-2">
+        <%= meal.quantity_in_stock %>
+      </div>
+
+      <div class="col-md-2">
+        <%= meal.quantity_required %>
+      </div>
+
+      <div class="col-md-2">
+        <%= number_to_currency meal.base_price %>
+      </div>
+
+      <div class="col-md-2">
+        <%= number_to_currency meal.sales_price %>
+      </div>
+
+    </div>
+
+
+    <div class="controls">
+      <div class="row">
+        <%= button_to "Delete", meal, :method => 'delete'%>
+        <%= link_to "Edit", edit_meal_path(meal.id)%>
+      </div>
+    </div>
   </div>
 
 <% end %>

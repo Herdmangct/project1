@@ -1,2 +1,30 @@
-<h1>Meals#edit</h1>
-<p>Find me in app/views/meals/edit.html.erb</p>
+<h1>Edit Meal</h1>
+
+<%= form_for @meal do |f| %>
+  <div class="form_group">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="form_group">
+  <%= f.label :quantity_in_stock %>
+  <%= f.number_field :quantity_in_stock %>
+  </div>
+
+  <div class="form_group">
+  <%= f.label :quantity_required %>
+  <%= f.number_field :quantity_required %>
+  </div>
+
+  <div class="form_group">
+  <%= f.label :base_price %>
+  <%= f.number_field :base_price %>
+  </div>
+
+  <div class="form_group">
+  <%= f.label :sales_price %>
+  <%= f.number_field :sales_price %>
+  </div>
+
+  <%= f.submit %>
+<% end %>

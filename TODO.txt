@@ -9,8 +9,24 @@
 2. Scrape the data required for menus from the internet
 3. Add the ability to upload a spreadsheet of data and then put that in the database - to integrate with the clients system that is already in place
 4. need to be able to calculate how much of an ingredient you need for a certain number of servings
+5. highlight the ingredient that needs to be ordered in red
+6. have a list of ingredients that need to be ordered in a table on the dashboard
 
 # Issues
 1. Name of an ingredient needs to be owned by the user so probably needs to be placed in the quantities table
 2. Restaurants make meals in batches so don't know exactly how much of what they need to put in each meal - so need different quantity of the same meal -
 add meal_quantity to quantities table
+3. Need Quantity information on meal ingredients page
+
+# Unused code
+1. clipboard
+<!-- Target -->
+<textarea >Mussum ipsum cacilds...</textarea>
+
+<!-- Trigger -->
+<div class="email" id="bar">
+  woolworths@ga.co
+</div>
+<button class="clipboard-btn" data-clipboard-action="copy" data-clipboard-target="#bar">
+    email
+</button>
