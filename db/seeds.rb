@@ -8,6 +8,10 @@ u2 = User.create :email => "Lazana@ga.co", :name => "Lazana", :password => 'chic
 
 Meal.destroy_all
 puts "Creating Meals"
+# Graham Meals
+# Todo Update this
+mg = Meal.create :name => "Spaghetti Bolognese", :quantity_in_stock => 4, :quantity_required => 4, :base_price => 10, :sales_price => 17.90
+
 # Cozy Thai Meals
 m1 = Meal.create :name => "MASMAN BEEF CURRY", :quantity_in_stock => 10, :quantity_required => 10, :base_price => 10, :sales_price => 17.90
 m2 = Meal.create :name => "LEMON BEEF", :quantity_in_stock => 10, :quantity_required => 10, :base_price => 10, :sales_price => 18.90
@@ -21,6 +25,20 @@ m6 = Meal.create :name => "Baked Sour Dough", :quantity_in_stock => 10, :quantit
 
 Ingredient.destroy_all
 puts "Creating Ingredients"
+# Graham
+# Spaghetti Bolognese
+ig1 = Ingredient.create :product_name => "San Remo Spaghetti Angel Hair Pasta No 9 500g", :name => "Angel Hair Pasta", :quantity_in_stock => 10, :quantity_required => 10, :supplier => "Woolworths", :supplier_url => "https://www.woolworths.com.au/shop/productdetails/94378/san-remo-spaghetti-angel-hair-pasta-no-9", :price => 8
+ig2 = Ingredient.create :product_name => "Woolworths Lean Beef Mince 500g", :name => "Beef Mince", :quantity_in_stock => 10, :quantity_required => 10, :supplier => "Woolworths", :supplier_url => "https://www.woolworths.com.au/shop/productdetails/577861/woolworths-lean-beef-mince", :price => 8
+ig3 = Ingredient.create :product_name => "Leggo's Tomato Paste Regular 280g", :name => "Tomato Paste", :quantity_in_stock => 10, :quantity_required => 10, :supplier => "Woolworths", :supplier_url => "https://www.woolworths.com.au/shop/productdetails/91990/leggo-s-tomato-paste-regular", :price => 8
+ig4 = Ingredient.create :product_name => "Woolworths Diced Italian Tomatoes 800g", :name => "Diced Tomatoes", :quantity_in_stock => 10, :quantity_required => 10, :supplier => "Woolworths", :supplier_url => "https://www.woolworths.com.au/shop/productdetails/236393/woolworths-diced-italian-tomatoes", :price => 8
+ig5 = Ingredient.create :product_name => "Gourmet Garden Garlic Cold Blended Paste Tube 120g", :name => "Garlic Paste", :quantity_in_stock => 10, :quantity_required => 10, :supplier => "Woolworths", :supplier_url => "https://www.woolworths.com.au/shop/productdetails/706450/gourmet-garden-garlic-cold-blended-paste-tube", :price => 8
+ig6 = Ingredient.create :product_name => "Gourmet Garden Paste Italian 80g", :name => "Italian Herb Paste", :quantity_in_stock => 10, :quantity_required => 10, :supplier => "Woolworths", :supplier_url => "https://www.woolworths.com.au/shop/productdetails/948513/gourmet-garden-paste-italian", :price => 8
+ig7 = Ingredient.create :product_name => "Masterfoods Seasoning Spaghetti Bolognese 40g", :name => "Spaghetti Bolognese Herbs", :quantity_in_stock => 10, :quantity_required => 10, :supplier => "Woolworths", :supplier_url => "https://www.woolworths.com.au/shop/productdetails/948513/gourmet-garden-paste-italian", :price => 8
+ig8 = Ingredient.create :product_name => "Cobram Estate Extra Virgin Light Olive Oil 750ml", :name => "Olive Oil", :quantity_in_stock => 10, :quantity_required => 10, :supplier => "Woolworths", :supplier_url => "https://www.woolworths.com.au/shop/productdetails/345955/cobram-estate-extra-virgin-light-olive-oil", :price => 8
+ig9 = Ingredient.create :product_name => "Saxa Natural Sea Salt Grinder 90g", :name => "Salt", :quantity_in_stock => 10, :quantity_required => 10, :supplier => "Woolworths", :supplier_url => "https://www.woolworths.com.au/shop/productdetails/142081/saxa-natural-sea-salt-grinder", :price => 8
+# Broccoli
+# Onion
+
 # Cozy Thai
 # MASMAN CURRY
 i1 = Ingredient.create :product_name => "Diced Beef Casserole", :name => "Beef Cubes", :quantity_in_stock => 10, :quantity_required => 10, :supplier => "Woolworths", :supplier_url => "https://www.woolworths.com.au/shop/productdetails/675483/diced-beef-casserole", :price => 8
@@ -53,6 +71,32 @@ i16 = Ingredient.create :product_name => "Greek Family Farm Organic Greek Feta 5
 
 Quantity.destroy_all
 puts "Creating Quantities"
+# Graham
+# Spaghetti Bolognese
+# Angel Hair Pasta
+qg1 = Quantity.create :measurement => 150, :unit_of_measurement => "gram", :users_ingredient_name => "Angel Hair Pasta"
+# Beef Mince
+qg2 = Quantity.create :measurement => 200, :unit_of_measurement => "gram", :users_ingredient_name => "Beef Mince"
+# Tomato Paste
+qg3 = Quantity.create :measurement => 0.5, :unit_of_measurement => "teaspoon", :users_ingredient_name => "Tomato Paste"
+# Diced Tomatoes
+qg4 = Quantity.create :measurement => 0.25, :unit_of_measurement => "can", :users_ingredient_name => "Diced Tomatoes"
+# Garlic Paste
+qg5 = Quantity.create :measurement => 1, :unit_of_measurement => "teaspoon", :users_ingredient_name => "Garlic Paste"
+# Italian Herb Paste
+qg6 = Quantity.create :measurement => 1, :unit_of_measurement => "teaspoon", :users_ingredient_name => "Italian Herb Paste"
+# Spaghetti Bolognese Herbs
+qg7 = Quantity.create :measurement => 1, :unit_of_measurement => "teaspoon", :users_ingredient_name => "Spaghetti Bolognese Herbs"
+# Olive Oil
+qg8 = Quantity.create :measurement => 1, :unit_of_measurement => "teaspoon", :users_ingredient_name => "Olive Oil"
+# Salt
+qg9 = Quantity.create :measurement => 0.5, :unit_of_measurement => "teaspoon", :users_ingredient_name => "Salt"
+# Onion
+qg10 = Quantity.create :measurement => 0.5, :unit_of_measurement => "onion", :users_ingredient_name => "Onion"
+# Broccoli
+qg11 = Quantity.create :measurement => 3, :unit_of_measurement => "broccoli sprout", :users_ingredient_name => "Broccoli"
+
+
 # Cozy Thai
 # MASMAN CURRY
 # Diced Beef Casserole
@@ -103,6 +147,9 @@ q16 = Quantity.create :measurement => 20, :unit_of_measurement => "gram"
 
 puts "Adding Associations"
 # Users (one to many) Meals
+## Graham
+a1.meals << mg
+
 ## Cozy Thai
 u1.meals << m1 << m2 << m3
 
@@ -110,7 +157,10 @@ u1.meals << m1 << m2 << m3
 u2.meals << m4 << m5 << m6
 
 # Meals (one to many) Quantities
-# ## Cozy Thai
+## Graham
+mg.quantities << qg1 << qg2 << qg3 << qg4 << qg5 << qg6 << qg7 << qg8 << qg9 << qg10 << qg11
+
+## Cozy Thai
 m1.quantities << q1 << q2 << q3 << q4
 m2.quantities << q5 << q6
 m3.quantities << q7 << q8 << q9
@@ -121,13 +171,24 @@ m5.quantities << q13 << q14
 m6.quantities << q15 << q16
 
 # Ingredients (one to many) Quantities
+## Graham
+ig1.quantities << qg1
+ig2.quantities << qg2
+ig3.quantities << qg3
+ig4.quantities << qg4
+ig5.quantities << qg5
+ig6.quantities << qg6
+ig7.quantities << qg7
+ig8.quantities << qg8
+ig9.quantities << qg9
+
 # ## Cozy Thai
 i1.quantities << q1
-i2.quantities << q2
+i2.quantities << q2 << qg10
 i3.quantities << q3
 i4.quantities << q4
 i5.quantities << q5
-i6.quantities << q6
+i6.quantities << q6 << qg11
 i7.quantities << q7
 i8.quantities << q8
 i9.quantities << q9

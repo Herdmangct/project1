@@ -3,3 +3,14 @@
 1. Users Controller
   - show
 2. Add a dashboard view (where it tells you when you need to reorder food)
+
+# Features
+1. Automatically generate email to supplier
+2. Scrape the data required for menus from the internet
+3. Add the ability to upload a spreadsheet of data and then put that in the database - to integrate with the clients system that is already in place
+4. need to be able to calculate how much of an ingredient you need for a certain number of servings
+
+# Issues
+1. Name of an ingredient needs to be owned by the user so probably needs to be placed in the quantities table
+2. Restaurants make meals in batches so don't know exactly how much of what they need to put in each meal - so need different quantity of the same meal -
+add meal_quantity to quantities table
