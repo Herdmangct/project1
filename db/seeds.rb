@@ -23,33 +23,33 @@ Ingredient.destroy_all
 puts "Creating Ingredients"
 # Cozy Thai
 # MASMAN CURRY
-i1 = Ingredient.create :name => "Diced Beef Casserole", :quantity_in_stock => 10, :quantity_required => 10, :supplier => "Woolworths", :supplier_url => "https://www.woolworths.com.au/shop/productdetails/675483/diced-beef-casserole", :price => 8
-i2 = Ingredient.create :name => "Fresh Brown Onion", :quantity_in_stock => 10, :quantity_required => 10, :supplier => "Woolworths", :supplier_url => "https://www.woolworths.com.au/shop/productdetails/144329/onion-brown", :price => 2.90
-i3 = Ingredient.create :name => "Fresh Potato Brushed", :quantity_in_stock => 10, :quantity_required => 10, :supplier => "Woolworths", :supplier_url => "https://www.woolworths.com.au/shop/productdetails/246566/potato-brushed", :price => 3.50
-i4 = Ingredient.create :name => "Woolworths Peanuts Unsalted", :quantity_in_stock => 10, :quantity_required => 10, :supplier => "Woolworths", :supplier_url => "https://www.woolworths.com.au/shop/productdetails/598179/woolworths-peanuts-unsalted", :price => 2.10
+i1 = Ingredient.create :product_name => "Diced Beef Casserole", :name => "Beef Cubes", :quantity_in_stock => 10, :quantity_required => 10, :supplier => "Woolworths", :supplier_url => "https://www.woolworths.com.au/shop/productdetails/675483/diced-beef-casserole", :price => 8
+i2 = Ingredient.create :product_name => "Fresh Brown Onion", :name => "Brown Onion", :quantity_in_stock => 10, :quantity_required => 10, :supplier => "Woolworths", :supplier_url => "https://www.woolworths.com.au/shop/productdetails/144329/onion-brown", :price => 2.90
+i3 = Ingredient.create :product_name => "Fresh Potato Brushed", :name => "Potato", :quantity_in_stock => 10, :quantity_required => 10, :supplier => "Woolworths", :supplier_url => "https://www.woolworths.com.au/shop/productdetails/246566/potato-brushed", :price => 3.50
+i4 = Ingredient.create :product_name => "Woolworths Peanuts Unsalted", :name => "Peanuts", :quantity_in_stock => 10, :quantity_required => 10, :supplier => "Woolworths", :supplier_url => "https://www.woolworths.com.au/shop/productdetails/598179/woolworths-peanuts-unsalted", :price => 2.10
 
 # LEMON BEEF
-i5 = Ingredient.create :name => "Msa Australian Beef Rump", :quantity_in_stock => 10, :quantity_required => 10, :supplier => "Woolworths", :price => 23
-i6 = Ingredient.create :name => "Fresh Broccoli", :quantity_in_stock => 10, :quantity_required => 10, :supplier => "Woolworths", :price => 3.50
+i5 = Ingredient.create :product_name => "Woolworths Beef Rump", :name => "Rump Steak", :quantity_in_stock => 10, :quantity_required => 10, :supplier => "Woolworths", :supplier_url => "https://www.woolworths.com.au/shop/productdetails/764903/woolworths-beef-rump-steak-1-2-pieces", :price => 23
+i6 = Ingredient.create :product_name => "Fresh Broccoli", :name => "Broccoli", :quantity_in_stock => 10, :quantity_required => 10, :supplier => "Woolworths", :supplier_url => "https://www.woolworths.com.au/shop/productdetails/134681/fresh-broccoli", :price => 3.50
 
 # PAD SEE IW
-i7 = Ingredient.create :name => "Thick Rice Noodles", :quantity_in_stock => 10, :quantity_required => 10, :supplier => "Woolworths", :price => 4
-i8 = Ingredient.create :name => "Eggs", :quantity_in_stock => 10, :quantity_required => 10, :supplier => "Woolworths", :price => 8.50
-i9 = Ingredient.create :name => "Fresh chilli", :quantity_in_stock => 10, :quantity_required => 10, :supplier => "Woolworths", :price => 1.90
+i7 = Ingredient.create :product_name => "Erawan Rice Noodles Stick Pad Thai", :name => "Rice Noodles", :quantity_in_stock => 10, :quantity_required => 10, :supplier => "Woolworths", :supplier_url => "https://www.woolworths.com.au/shop/productdetails/313632/erawan-rice-noodles-stick-pad-thai", :price => 4
+i8 = Ingredient.create :product_name => "Port Stephens 18 Large Free Range Eggs 900g", :name => "Eggs", :quantity_in_stock => 10, :quantity_required => 10, :supplier => "Woolworths", :supplier_url => "https://www.woolworths.com.au/shop/productdetails/339095/port-stephens-18-large-free-range-eggs", :price => 8.50
+i9 = Ingredient.create :product_name => "Chilli Jalapeno Hot each", :name => "Jalapeno Chilli", :quantity_in_stock => 10, :quantity_required => 10, :supplier => "Woolworths", :supplier_url => "https://www.woolworths.com.au/shop/productdetails/126772/chilli-jalapeno-hot", :price => 1.90
 
 # Lazana
 # Linguine Meatballs
-i10 = Ingredient.create :name => "San Remo Linguine Pasta", :quantity_in_stock => 10, :quantity_required => 10, :supplier => "Woolworths", :price => 1.95
-i11 = Ingredient.create :name => "Woolworths Lean Beef Mince", :quantity_in_stock => 10, :quantity_required => 10, :supplier => "Woolworths", :price => 13
-i12 = Ingredient.create :name => "Leggos Tomato Paste", :quantity_in_stock => 10, :quantity_required => 10, :supplier => "Woolworths", :price => 7.40
+i10 = Ingredient.create :product_name => "San Remo Linguine Pasta No 1 500g", :name => "Linguine Pasta", :quantity_in_stock => 10, :quantity_required => 10, :supplier => "Woolworths", :supplier_url => "https://www.woolworths.com.au/shop/productdetails/82282/san-remo-linguine-pasta-no-1", :price => 1.95
+i11 = Ingredient.create :product_name => "Woolworths Lean Beef Mince", :name => "Beef Mince", :quantity_in_stock => 10, :quantity_required => 10, :supplier => "Woolworths", :supplier_url => "https://www.woolworths.com.au/shop/productdetails/577861/woolworths-lean-beef-mince", :price => 13
+i12 = Ingredient.create :product_name => "Leggo's Tomato Paste 500g", :name => "Tomato Paste", :quantity_in_stock => 10, :quantity_required => 10, :supplier => "Woolworths", :supplier_url => "https://www.woolworths.com.au/shop/productdetails/38640/leggo-s-tomato-paste", :price => 7.40
 
 # Veal Scallopini
-i13 = Ingredient.create :name => "Woolworths Beef Blade Boneless Steak 1-2 Pieces 400g - 800g", :quantity_in_stock => 10, :quantity_required => 10, :supplier => "Woolworths", :price => 17
-i14 = Ingredient.create :name => "Western Star Original Butter Block", :quantity_in_stock => 10, :quantity_required => 10, :supplier => "Woolworths", :price => 13.50
+i13 = Ingredient.create :product_name => "Woolworths Beef Blade Boneless Steak 1-2 Pieces 400g - 800g", :name => "Boneless Blade Beef Steak", :quantity_in_stock => 10, :quantity_required => 10, :supplier => "Woolworths", :supplier_url => "https://www.woolworths.com.au/shop/productdetails/764971/woolworths-beef-blade-boneless-steak-1-2-pieces", :price => 17
+i14 = Ingredient.create :product_name => "Western Star Original Butter Block 500g", :name => "Butter", :quantity_in_stock => 10, :quantity_required => 10, :supplier => "Woolworths", :supplier_url => "https://www.woolworths.com.au/shop/productdetails/41287/western-star-original-butter-block", :price => 13.50
 
 # Baked Sour Dough
-i15 = Ingredient.create :name => "Woolworths Bread Sourdough Loaf each", :quantity_in_stock => 10, :quantity_required => 10, :supplier => "Woolworths", :price => 5.50
-i16 = Ingredient.create :name => "Greek Family Farm Organic Greek Feta 50g", :quantity_in_stock => 10, :quantity_required => 10, :supplier => "Woolworths", :price => 50
+i15 = Ingredient.create :product_name => "Woolworths Bread Sourdough Loaf each", :name => "Sourdough Bread", :quantity_in_stock => 10, :quantity_required => 10, :supplier => "Woolworths", :supplier_url => "https://www.woolworths.com.au/shop/productdetails/363952/woolworths-bread-sourdough-loaf", :price => 5.50
+i16 = Ingredient.create :product_name => "Greek Family Farm Organic Greek Feta 50g", :name => "Feta", :quantity_in_stock => 10, :quantity_required => 10, :supplier => "Woolworths", :supplier_url => "https://www.woolworths.com.au/shop/productdetails/23244/greek-family-farm-organic-greek-feta", :price => 50
 
 Quantity.destroy_all
 puts "Creating Quantities"
