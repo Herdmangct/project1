@@ -1,2 +1,71 @@
-<h1>Ingredients#new</h1>
-<p>Find me in app/views/ingredients/new.html.erb</p>
+
+<h1>Add An Ingredient To Your Pantry</h1>
+
+<% if @ingredient.errors.any? %>
+  <ol>
+    <% @ingredient.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ol>
+<% end %>
+
+<%= form_for @ingredient do |f| %>
+  <div class="form_group">
+    <%= f.label :name %>
+    <%= f.text_field :name, :class => "form-control", :required => true %>
+  </div>
+
+  <div class="form_group">
+    <%= f.label :product_name %>
+    <%= f.text_field :product_name, :class => "form-control", :required => true %>
+  </div>
+
+  <div class="form_group">
+    <%= f.label :supplier %>
+    <%= f.text_field :supplier, :class => "form-control", :required => true %>
+  </div>
+
+  <div class="form_group">
+    <%= f.label :supplier_url %>
+    <%= f.text_field :supplier_url, :class => "form-control" %>
+  </div>
+
+  <div class="form_group">
+    <%= f.label :supplier_email %>
+    <%= f.text_field :supplier_email, :class => "form-control" %>
+  </div>
+
+  <div class="form_group">
+    <%= f.label :price %>
+    <%= f.number_field :price, :step => :any, :class => "form-control" %>
+  </div>
+
+  <div class="form_group">
+    <%= f.label :atomic_unit, :name => "Smallest Purchase" %>
+    <%= f.number_field :atomic_unit, :step => :any, :class => "form-control" %>
+  </div>
+
+  <div class="form_group">
+    <%= f.label :quantity_in_stock %>
+    <%= f.number_field :quantity_in_stock, :class => "form-control" %>
+  </div>
+
+  <div class="form_group">
+    <%= f.label :quantity_required %>
+    <%= f.number_field :quantity_required, :class => "form-control" %>
+  </div>
+
+  <div class="form_group">
+    <%= f.label :unit_of_measurement %>
+    <%= f.text_field :unit_of_measurement, :class => "form-control" %>
+  </div>
+
+   <!-- Quantities creation for meal first --> 
+
+  <%= f.submit "Add Ingredient", :class => "btn btn-primary"%>
+
+<% end %>
+
+
+
+<p>Ingredients#new</p>

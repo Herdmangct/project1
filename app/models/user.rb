@@ -14,4 +14,9 @@
 class User < ApplicationRecord
   has_secure_password
   has_many :meals
+
+  def ingredients
+    self.meals.map(&:ingredients).flatten
+  end
+
 end

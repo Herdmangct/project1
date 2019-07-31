@@ -12,6 +12,7 @@
 5. highlight the ingredient that needs to be ordered in red
 6. have a list of ingredients that need to be ordered in a table on the dashboard
 7. User security is paramount
+8. Add subscription payment service
 
 # Issues
 1. Name of an ingredient needs to be owned by the user so probably needs to be placed in the quantities table

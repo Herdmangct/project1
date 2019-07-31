@@ -156,6 +156,9 @@ u1.meals << m1 << m2 << m3
 ## Lazana
 u2.meals << m4 << m5 << m6
 
+# Users (one to many) Ingredients
+## Graham
+
 # Meals (one to many) Quantities
 ## Graham
 mg.quantities << qg1 << qg2 << qg3 << qg4 << qg5 << qg6 << qg7 << qg8 << qg9 << qg10 << qg11

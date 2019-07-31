@@ -7,11 +7,10 @@
   </div>
 </div>
 
-
 <div class="row">
 
   <div class="col-md-2">
-    <h5>Meal</h5>
+    <h5>Ingredient</h5>
   </div>
 
   <div class="col-md-2">
@@ -23,51 +22,65 @@
   </div>
 
   <div class="col-md-2">
-    <h5>Base Price</h5>
+    <h5>Supplier</h5>
   </div>
 
   <div class="col-md-2">
-    <h5>Sales Price</h5>
+    <h5>Price</h5>
+  </div>
+
+  <div class="col-md-2">
+    <h5>Atomic Unit</h5>
   </div>
 
 </div>
 
-<% @current_user.meals.each do |meal| %>
+<% @current_user.ingredients.each do |ingredient| %>
 
-  <div class="mealsIndex">
+  <div class="ingredientsIndex">
+
     <div class="row">
 
       <div class="col-md-2">
-        <%= link_to meal.name, meal %>
+        <%= link_to ingredient.name, ingredient %>
       </div>
 
       <div class="col-md-2">
-        <%= meal.quantity_in_stock %>
+        <%= pluralize ingredient.quantity_in_stock, ingredient.unit_of_measurement %>
       </div>
 
       <div class="col-md-2">
-        <%= meal.quantity_required %>
+        <%= pluralize ingredient.quantity_required, ingredient.unit_of_measurement %>
       </div>
 
       <div class="col-md-2">
-        <%= number_to_currency meal.base_price %>
+        <% if ingredient.supplier_url.present? %>
+          <%= link_to(ingredient.supplier, ingredient.supplier_url) %>
+        <% else %>
+          <%= ingredient.supplier_email %>
+        <% end %>
       </div>
 
       <div class="col-md-2">
-        <%= number_to_currency meal.sales_price %>
+        <%= "#{number_to_currency ingredient.price} / #{ingredient.unit_of_measurement}" %>
+      </div>
+
+      <div class="col-md-2">
+        <%= pluralize ingredient.atomic_unit, ingredient.unit_of_measurement %>
       </div>
 
     </div>
-
 
     <div class="controls">
       <div class="row">
-        <%= button_to "Delete", meal, :method => 'delete'%>
-        <%= link_to "Edit", edit_meal_path(meal.id)%>
+        <%= link_to "Edit", edit_ingredient_path(ingredient) %>
+        <%= button_to "Delete", ingredient, :method => 'delete'%>
       </div>
     </div>
+
   </div>
 
 <% end %>
+
 
 <p>Ingredients#index</p>
