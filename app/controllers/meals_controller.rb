@@ -11,27 +11,43 @@ class MealsController < ApplicationController
     check_if_own_meal(@meal)
   end
 
+  # DONE
   def new
     @meal = Meal.new
   end
 
+  # DONE
   def create
     @meal = Meal.new meal_params
-    @meal.save 
+
+    @current_user.meals << @meal
+
+    @meal.save
+    redirect_to meals_path
   end
 
+  # DONE
   def edit
     @meal = Meal.find params[:id]
+
+    check_if_own_meal(@meal)
   end
 
+  # DONE
   def update
     @meal = Meal.find params[:id]
+
+    check_if_own_meal(@meal)
+
     @meal.update meal_params
     redirect_to meals_path
   end
 
   def destroy
     meal = Meal.find params[:id]
+
+    check_if_own_meal(meal)
+
     meal.destroy
     redirect_to meals_path
   end

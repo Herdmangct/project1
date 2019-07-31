@@ -11,6 +11,7 @@
 4. need to be able to calculate how much of an ingredient you need for a certain number of servings
 5. highlight the ingredient that needs to be ordered in red
 6. have a list of ingredients that need to be ordered in a table on the dashboard
+7. User security is paramount
 
 # Issues
 1. Name of an ingredient needs to be owned by the user so probably needs to be placed in the quantities table
