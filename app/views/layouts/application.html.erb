@@ -10,16 +10,50 @@
   </head>
 
   <body>
-    <div class="container">
+    <div class="container" style="background-color:cream;">
 
-      <nav>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item" id="Home">
+              <%= link_to "Home", root_path, :class => "nav-link" %>
+            </li>
+
+              <% if @current_user.present? %>
+                <% if @current_user.admin? %>
+                <li class="nav-item" id="allUsers">
+                  <%= link_to "All Users", users_path, :class => "nav-link" %>
+                </li>
+                <% end %>
+                <li class="nav-item" id="dashboard">
+                  <%= link_to "Dashboard", show_user_path, :class => "nav-link" %>
+                </li>
+                <li class="nav-item" id="editAccount">
+                  <%= link_to "Edit Account", edit_user_path, :class => "nav-link" %>
+                </li>
+                <li class="nav-item" id="logOut">
+                  <%= link_to "Log out #{ (@current_user.name.nil?) ? (@current_user.email):(@current_user.name) }", login_path, :method => :delete, :class => "nav-link" %>
+                </li>
+
+              <% else %>
+              <li class="nav-item" id="signUp">
+                <%= link_to "Sign up", new_user_path, :class => "nav-link" %>
+              </li>
+              <li class="nav-item" id="logIn">
+                <%= link_to "Log in", login_path, :class => "nav-link" %>
+              </li>
+              <% end %>
+          </ul>
+        </div>
+      </nav>
+
+
+      <!-- <nav>
         <ul class="navbar">
           <li><%= link_to "Home", root_path %></li>
-          |
           <% if @current_user.present? %>
             <% if @current_user.admin? %>
               <li><%= link_to "All Users", users_path %></li>
-              |
             <% end %>
             <li><%= link_to "Dashboard", show_user_path %></li>
             <li><%= link_to "Edit Account", edit_user_path %></li>
@@ -31,8 +65,7 @@
           <% end %>
 
         </ul>
-      </nav>
-
+      </nav> -->
 
       <%= yield %>
     </div>

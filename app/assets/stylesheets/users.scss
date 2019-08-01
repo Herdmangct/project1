@@ -674,7 +674,7 @@
 
   14% {
     -webkit-transform: scale(1.3);
-    transform: scale(1.3);
+    transform: scale(1.1);
   }
 
   28% {
@@ -682,15 +682,15 @@
     transform: scale(1);
   }
 
-  42% {
-    -webkit-transform: scale(1.3);
-    transform: scale(1.3);
-  }
-
-  70% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-  }
+  // 42% {
+  //   -webkit-transform: scale(1.3);
+  //   transform: scale(1.3);
+  // }
+  //
+  // 70% {
+  //   -webkit-transform: scale(1);
+  //   transform: scale(1);
+  // }
 }
 
 @keyframes heartBeat {
@@ -700,8 +700,8 @@
   }
 
   14% {
-    -webkit-transform: scale(1.3);
-    transform: scale(1.3);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
   }
 
   28% {
@@ -709,24 +709,24 @@
     transform: scale(1);
   }
 
-  42% {
-    -webkit-transform: scale(1.3);
-    transform: scale(1.3);
-  }
-
-  70% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-  }
+  // 42% {
+  //   -webkit-transform: scale(1.3);
+  //   transform: scale(1.3);
+  // }
+  //
+  // 70% {
+  //   -webkit-transform: scale(1);
+  //   transform: scale(1);
+  // }
 }
 
 .heartBeat {
   -webkit-animation-name: heartBeat;
   animation-name: heartBeat;
-  -webkit-animation-duration: 1.3s;
-  animation-duration: 1.3s;
-  -webkit-animation-timing-function: ease-in-out;
-  animation-timing-function: ease-in-out;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-timing-function: ease-in;
+  animation-timing-function: ease-in;
 }
 
 @-webkit-keyframes bounceIn {

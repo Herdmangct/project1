@@ -1,14 +1,14 @@
 
-.navbar {
-
-  list-style: none;
-
-  max-width: 50vh;
-
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
+// .navbar {
+//
+//   list-style: none;
+//
+//   max-width: 50vh;
+//
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: space-between;
+// }
 
 .addQuantitiesForm {
   display: none;
@@ -22,4 +22,8 @@ a.no-link {
 
 a.no-link:hover {
   opacity: 1;
+}
+
+.title {
+  text-align: center;
 }
