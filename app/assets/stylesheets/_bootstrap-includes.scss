@@ -1,6 +1,16 @@
 @import "bootstrap";
 
+.card {
+  height:100%;
+  width: 50%;
+}
 
-// .btn-success {
-//   background-color: green;
-// }
+.card-title {
+  text-align: center;
+  padding-top: 25%;
+  font-size: 20px;
+}
+
+.card-img:hover {
+  opacity: 0.5;
+}

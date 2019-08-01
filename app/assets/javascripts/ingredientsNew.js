@@ -34,12 +34,13 @@ $(document).ready(function(){
 
   });
 
-
+  // add measurement and unit of measurement to hidden input value
   $(`[name="button"]`).on("click", function () {
 
-    $(`#${meal.split(" ").join("_")}`).val($(`#${meal.split(" ").join("_")}`).val() + "_" + $(`[name="measurement"]`).val())
+    meal_id = `#${meal.split(" ").join("_")}`
+
+    $(meal_id).val(meal + "_" + $(`[name="measurement"]`).val() + "_" + $(`[name="unit_of_measurement"]`).val())
     console.log($(`#${meal}`))
-    // console.log($(`[name="measurement"]`).val())
 
     // hide measurement
     $(".addQuantitiesForm").hide();

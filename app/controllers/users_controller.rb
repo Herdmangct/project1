@@ -30,13 +30,17 @@ class UsersController < ApplicationController
 
   def update
     @current_user.update user_params
-    redirect_to show_user_path 
+    redirect_to show_user_path
   end
 
   def destroy
     user = User.find params[:id]
     user.destroy
     redirect_to users_path
+  end
+
+  def summary
+
   end
 
   private

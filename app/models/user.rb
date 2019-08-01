@@ -13,7 +13,7 @@
 
 class User < ApplicationRecord
   has_secure_password
-  has_many :meals
+  has_many :meals, :dependent => :destroy
 
   def ingredients
     self.meals.map(&:ingredients).flatten

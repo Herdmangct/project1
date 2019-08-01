@@ -20,6 +20,8 @@
 add meal_quantity to quantities table
 3. Need Quantity information on meal ingredients page
 
+4. meals ingredients measurement should be shown from quantities
+
 # Unused code
 1. clipboard
 <!-- Target -->

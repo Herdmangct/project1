@@ -1,6 +1,39 @@
 <h1>User Dashboard</h1>
 
 <div class="container">
-  <li><%= link_to "All Meals", meals_path %></li>
-  <li><%= link_to "All Ingredients In Stock", ingredients_path %></li>
+  <div class="row">
+
+    <div class="col-xs-6">
+      <div class="card text-white rounded float-left card-img" id="top">
+        <%= link_to image_tag("meals_dashboard.jpg", :class => "card-img"), meals_path %>
+        <div class="card-img-overlay">
+          <h5 class="card-title"><%= link_to "Your Meals", meals_path, :class => "no-link" %></h5>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row justify-content-end">
+    <div class="col-xs-6">
+      <div class="card text-white rounded float-right card-img" id="middle">
+        <%= link_to image_tag("ingredients_dashboard.jpg", :class => "card-img" ), ingredients_path %>
+        <div class="card-img-overlay">
+          <h5 class="card-title"><%= link_to "Your Ingredients", ingredients_path, :class => "no-link" %></h5>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row justify-content-end">
+    <div class="col-xs-6">
+      <div class="card text-white rounded float-left card-img" id="bottom">
+        <%= link_to image_tag("calculation_dashboard.jpg", :class => "card-img" ), ingredients_path %>
+        <div class="card-img-overlay">
+          <h5 class="card-title"><%= link_to "Stock Calculation", users_summary_path, :class => "no-link" %></h5>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>

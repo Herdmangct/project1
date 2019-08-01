@@ -18,11 +18,10 @@ class MealsController < ApplicationController
 
   # DONE
   def create
-    @meal = Meal.new meal_params
+    @meal = Meal.create meal_params
 
     @current_user.meals << @meal
 
-    @meal.save
     redirect_to meals_path
   end
 

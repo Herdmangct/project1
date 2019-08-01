@@ -6,43 +6,59 @@ class IngredientsController < ApplicationController
   def index
   end
 
+  # DONE
   def show
     @ingredient = Ingredient.find params[:id]
   end
 
+  # DONE
   def new
     @ingredient = Ingredient.new
   end
 
+  # DONE
   def create
-    @ingredient = Ingredient.new ingredient_params
+    ingredient = Ingredient.create ingredient_params
 
-    # raise "hell"
-    #
-    # # attach ingredient to quantities by trying to get contents of every hash
-    # @current_user.meals.each do |meal|
-    #   quantity_attributes = params.fetch(meal.parameterize.underscore.to_sym, false)
-    #   quantity_attributes = quantity_attributes.split("_") unless quantity_attributes == false
-    #   @quantity = Quantity.new :measurement => quantity_attributes[1].to_f
-    #   @ingredient.quantities <<
-    # end
-    # @ingredient.quantities << @
-    #
-    # @meal.save
-    # redirect_to meals_path
+    quantity_attributes = params[:meals]
 
-    # need to catch the quantities information and create a quantity and attach it to both meal and ingredient
+    # Loop over the quantities
+    quantity_attributes.each do |q|
+      q = q.split("_")
 
+      # create quantity
+      meal_name = q[0]
+      quantity_measurement = q[1]
+      quantity_unit_of_measurement = q[2]
+
+      quantity = Quantity.create :measurement => quantity_measurement, :unit_of_measurement => quantity_unit_of_measurement
+
+      # Meal (one to many) Quantity
+      meal = Meal.find_by( :name => meal_name)
+      meal.quantities << quantity
+
+      # Ingredient (one to many) Quantity
+      ingredient.quantities << quantity
+
+    end
+
+    redirect_to ingredients_path
   end
 
   def edit
   end
 
   def update
-
   end
 
+  # DONE
   def destroy
+    ingredient = Ingredient.find params[:id]
+
+    check_if_own_ingredient(ingredient)
+
+    ingredient.destroy
+    redirect_to ingredients_path
   end
 
   private
@@ -50,4 +66,8 @@ class IngredientsController < ApplicationController
     params.require(:ingredient).permit(:name, :quantity_in_stock, :quantity_required, :supplier, :price, :unit_of_measurement, :atomic_unit, :supplier_url, :product_name, :supplier_email)
   end
 
+  private
+  def check_if_own_ingredient(ingredient)
+    redirect_to ingredients_path unless @current_user.ingredients.include? ingredient
+  end
 end
