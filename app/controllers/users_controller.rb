@@ -40,7 +40,6 @@ class UsersController < ApplicationController
   end
 
   def summary
-
   end
 
   private

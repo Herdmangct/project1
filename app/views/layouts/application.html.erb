@@ -12,35 +12,36 @@
   <body>
     <div class="container" style="background-color:cream;">
 
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <nav class="navbar navbar-expand-lg navbar-light bg-dark">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item" id="Home">
-              <%= link_to "Home", root_path, :class => "nav-link" %>
-            </li>
+            <%= link_to image_tag("logo_nav.png", :class => "logo #{current_class?(root_path)}"), root_path %>
+            <!-- <li class="nav-item" id="Home">
+              <%= link_to "Home", root_path, :class => "nav-link #{current_class?(root_path)}" %>
+            </li> -->
 
               <% if @current_user.present? %>
                 <% if @current_user.admin? %>
                 <li class="nav-item" id="allUsers">
-                  <%= link_to "All Users", users_path, :class => "nav-link" %>
+                  <%= link_to "All Users", users_path, :class => "nav-link #{current_class?(users_path)}" %>
                 </li>
                 <% end %>
                 <li class="nav-item" id="dashboard">
-                  <%= link_to "Dashboard", show_user_path, :class => "nav-link" %>
+                  <%= link_to "Dashboard", show_user_path, :class => "nav-link #{current_class?(show_user_path)}" %>
                 </li>
                 <li class="nav-item" id="editAccount">
-                  <%= link_to "Edit Account", edit_user_path, :class => "nav-link" %>
+                  <%= link_to "Edit Account", edit_user_path, :class => "nav-link #{current_class?(edit_user_path)}" %>
                 </li>
                 <li class="nav-item" id="logOut">
-                  <%= link_to "Log out #{ (@current_user.name.nil?) ? (@current_user.email):(@current_user.name) }", login_path, :method => :delete, :class => "nav-link" %>
+                  <%= link_to "Log out #{ (@current_user.name.nil? || @current_user.name == "") ? (@current_user.email):(@current_user.name) }", login_path, :method => :delete, :class => "nav-link #{current_class?(login_path)}" %>
                 </li>
 
               <% else %>
               <li class="nav-item" id="signUp">
-                <%= link_to "Sign up", new_user_path, :class => "nav-link" %>
+                <%= link_to "Sign up", new_user_path, :class => "nav-link #{current_class?(new_user_path)}" %>
               </li>
               <li class="nav-item" id="logIn">
-                <%= link_to "Log in", login_path, :class => "nav-link" %>
+                <%= link_to "Log in", login_path, :class => "nav-link #{current_class?(login_path)}" %>
               </li>
               <% end %>
           </ul>

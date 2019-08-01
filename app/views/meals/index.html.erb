@@ -1,71 +1,53 @@
 <div class="row">
-  <div class="col-md-2">
+  <div class="col-md-3">
     <h1>Your Meals</h1>
   </div>
-  <div class="col-md-2">
+  <div class="col-md-2" style="padding-top: 1.5vh;">
     <%= link_to "Add A Meal", new_meal_path %>
   </div>
 </div>
 
+<table class="table table-striped">
 
-<div class="row">
+  <%= display_standard_table([
+            { :name => 'name', :display_name => 'Meal'},
+            { :name => 'quantity_in_stock', :display_name => 'Quantity In Stock'},
+            { :name => 'quantity_required', :display_name => 'Quantity Required'},
+            { :name => 'base_price', :display_name => 'Cost to Make'},
+            { :name => 'sales_price', :display_name => 'Sales Price'}
+          ], @current_user.meals) %>
+</table>
 
-  <div class="col-md-2">
-    <h5>Meal</h5>
-  </div>
-
-  <div class="col-md-2">
-    <h5>Quantity in Stock</h5>
-  </div>
-
-  <div class="col-md-2">
-    <h5>Quantity Required</h5>
-  </div>
-
-  <div class="col-md-2">
-    <h5>Base Price</h5>
-  </div>
-
-  <div class="col-md-2">
-    <h5>Sales Price</h5>
-  </div>
-
-</div>
+<!-- <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Meal</th>
+      <th scope="col">Quantity in Stock</th>
+      <th scope="col">Quantity Required</th>
+      <th scope="col">Base Price</th>
+      <th scope="col">Sales Price</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
 
 <% @current_user.meals.each do |meal| %>
-
-  <div class="mealsIndex">
-    <div class="row">
-
-      <div class="col-md-2">
+  <tbody>
+    <tr>
+      <td>
         <%= link_to meal.name, meal %>
-      </div>
+      </td>
+      <td><%= meal.quantity_in_stock %></td>
+      <td><%= meal.quantity_required %></td>
+      <td><%= number_to_currency meal.base_price %></td>
+      <td><%= number_to_currency meal.sales_price %></td>
+      <td>
+        <div class="row" style="text-align:center;">
+          <%= link_to "Edit", edit_meal_path(meal.id) %>
+          <%= button_to "Delete", meal, :method => 'delete', :style => "margin-left:1em;"%>
+        </div>
+      </td>
+    </tr>
 
-      <div class="col-md-2">
-        <%= meal.quantity_in_stock %>
-      </div>
-
-      <div class="col-md-2">
-        <%= meal.quantity_required %>
-      </div>
-
-      <div class="col-md-2">
-        <%= number_to_currency meal.base_price %>
-      </div>
-
-      <div class="col-md-2">
-        <%= number_to_currency meal.sales_price %>
-      </div>
-
-    </div>
-
-
-    <div class="controls">
-      <div class="row">
-        <%= button_to "Delete", meal, :method => 'delete'%>
-        <%= link_to "Edit", edit_meal_path(meal.id)%>
-      </div>
-    </div>
-  </div>
-
-<% end %>
+  </tbody>
+</table>
+<% end %> -->
