@@ -60,7 +60,24 @@
     <%= f.text_field :unit_of_measurement, :class => "form-control" %>
   </div>
 
-   <!-- Quantities creation for meal first --> 
+   <!-- Quantities creation for meal first -->
+   <%= select_tag "meal_dropdown", options_for_select(@current_user.meals.map { |meal|  meal.name }.unshift('')), :class => "mealsDropDown" %>
+
+  <div class="addQuantitiesForm">
+
+    <div class="form_group" id = "measurement">
+      <%= label_tag :measurement, "Quantity" %>
+      <%= number_field_tag :measurement, nil, :step => :any, :class => "form-control" %>
+    </div>
+
+    <div class="form_group" id = "measurement">
+      <%= label_tag :unit_of_measurement, "Unit Of Measurement" %>
+      <%= text_field_tag :unit_of_measurement, nil, :class => "form-control" %>
+    </div>
+
+    <%= button_tag :Add_Measurement, :type => "button" %>
+  </div>
+
 
   <%= f.submit "Add Ingredient", :class => "btn btn-primary"%>
 
