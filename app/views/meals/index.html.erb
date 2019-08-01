@@ -8,17 +8,6 @@
 </div>
 
 <table class="table table-striped">
-
-  <%= display_standard_table([
-            { :name => 'name', :display_name => 'Meal'},
-            { :name => 'quantity_in_stock', :display_name => 'Quantity In Stock'},
-            { :name => 'quantity_required', :display_name => 'Quantity Required'},
-            { :name => 'base_price', :display_name => 'Cost to Make'},
-            { :name => 'sales_price', :display_name => 'Sales Price'}
-          ], @current_user.meals) %>
-</table>
-
-<!-- <table class="table table-striped">
   <thead>
     <tr>
       <th scope="col">Meal</th>
@@ -30,24 +19,23 @@
     </tr>
   </thead>
 
-<% @current_user.meals.each do |meal| %>
   <tbody>
-    <tr>
-      <td>
-        <%= link_to meal.name, meal %>
-      </td>
-      <td><%= meal.quantity_in_stock %></td>
-      <td><%= meal.quantity_required %></td>
-      <td><%= number_to_currency meal.base_price %></td>
-      <td><%= number_to_currency meal.sales_price %></td>
-      <td>
-        <div class="row" style="text-align:center;">
-          <%= link_to "Edit", edit_meal_path(meal.id) %>
-          <%= button_to "Delete", meal, :method => 'delete', :style => "margin-left:1em;"%>
-        </div>
-      </td>
-    </tr>
-
+    <% @current_user.meals.each do |meal| %>
+      <tr>
+        <td>
+          <%= link_to meal.name, meal %>
+        </td>
+        <td><%= meal.quantity_in_stock %></td>
+        <td><%= meal.quantity_required %></td>
+        <td><%= number_to_currency meal.base_price %></td>
+        <td><%= number_to_currency meal.sales_price %></td>
+        <td>
+          <div class="row" style="text-align:center;">
+            <%= link_to "Edit", edit_meal_path(meal.id) %>
+            <%= button_to "Delete", meal, :method => 'delete', :style => "margin-left:1em;"%>
+          </div>
+        </td>
+      </tr>
+    <% end %>
   </tbody>
-</table>
-<% end %> -->
+      </table>
