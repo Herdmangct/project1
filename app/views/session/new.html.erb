@@ -1,21 +1,26 @@
-<h1>Log in</h1>
 
-<p>
-  <%= flash[:error_message] %>
-</p>
+<div class="conatiner">
 
-<%= form_tag login_path, :class => "form-inline" do %>
+  <h1>Log in</h1>
 
-  <div class="form_group">
-    <%= label_tag :email %>
-    <%= email_field_tag :email, nil, :class => "form-control" %>
-  </div>
+  <p>
+    <%= flash[:error_message] %>
+  </p>
 
-  <div class="form_group">
-    <%= label_tag :password %>
-    <%= password_field_tag :password, nil, :class => "form-control" %>
-  </div>
+  <%= form_tag login_path do %>
 
-  <%= submit_tag "Sign in", :class => "btn-lg btn-success" %>
+    <div class="form_group">
+      <%= label_tag :email %>
+      <%= email_field_tag :email, nil, :class => "form-control" %>
+    </div>
 
-<% end %>
+    <div class="form_group">
+      <%= label_tag :password %>
+      <%= password_field_tag :password, nil, :class => "form-control" %>
+    </div>
+
+    <%= submit_tag "Sign in", :style => "margin-top: 2vh;" %>
+
+  <% end %>
+
+</div>

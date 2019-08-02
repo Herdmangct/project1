@@ -1,76 +1,38 @@
 <h1>Ingredients for <%= @meal.name.downcase.split(" ").map {|s| s.capitalize}.join(" ") %></h1>
 
-<div class="row">
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Ingredient</th>
+      <th scope="col">Quantity in Stock</th>
+      <th scope="col">Quantity Required</th>
+      <th scope="col">Supplier</th>
+      <th scope="col">Price</th>
+      <th scope="col">Atomic Unit</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
 
-  <div class="col-md-2">
-    <h5>Ingredient</h5>
-  </div>
-
-  <div class="col-md-2">
-    <h5>Quantity in Stock</h5>
-  </div>
-
-  <div class="col-md-2">
-    <h5>Quantity Required</h5>
-  </div>
-
-  <div class="col-md-2">
-    <h5>Supplier</h5>
-  </div>
-
-  <div class="col-md-2">
-    <h5>Price</h5>
-  </div>
-
-  <div class="col-md-2">
-    <h5>Atomic Unit</h5>
-  </div>
-
-</div>
-
-<% @meal.ingredients.each do |ingredient| %>
-
-  <div class="mealsShow">
-
-    <div class="row">
-
-      <div class="col-md-2">
-        <%= link_to ingredient.name, ingredient %>
-      </div>
-
-      <div class="col-md-2">
-        <%= pluralize ingredient.quantity_in_stock, ingredient.unit_of_measurement %>
-      </div>
-
-      <div class="col-md-2">
-        <%= pluralize ingredient.quantity_required, ingredient.unit_of_measurement %>
-      </div>
-
-      <div class="col-md-2">
-        <% if ingredient.supplier_url.present? %>
+  <tbody>
+    <% @meal.ingredients.each do |ingredient| %>
+      <tr>
+        <td><%= link_to ingredient.name, ingredient %></td>
+        <td><%= pluralize ingredient.quantity_in_stock, ingredient.unit_of_measurement %></td>
+        <td><%= pluralize ingredient.quantity_required, ingredient.unit_of_measurement %></td>
+        <td><% if ingredient.supplier_url.present? %>
           <%= link_to(ingredient.supplier, ingredient.supplier_url) %>
         <% else %>
           <%= ingredient.supplier_email %>
-        <% end %>
-      </div>
-
-      <div class="col-md-2">
-        <%= "#{number_to_currency ingredient.price} / #{ingredient.unit_of_measurement}" %>
-      </div>
-
-      <div class="col-md-2">
-        <%= pluralize ingredient.atomic_unit, ingredient.unit_of_measurement %>
-      </div>
-
-    </div>
-
-    <div class="controls">
-      <div class="row">
-        <%= link_to "Edit", edit_ingredient_path(ingredient) %>
-        <%= button_to "Delete", ingredient, :method => 'delete'%>
-      </div>
-    </div>
-
-  </div>
-
-<% end %>
+        <% end %></td>
+        <td><%= "#{number_to_currency ingredient.price} / #{ingredient.unit_of_measurement}" %></td>
+        <td><%= pluralize ingredient.atomic_unit, ingredient.unit_of_measurement %></td>
+        <td>
+          <div class="row" style="text-align:center;">
+            <%= link_to "Edit", edit_ingredient_path(ingredient) %>
+            <%= button_to "Delete", ingredient, :method => 'delete', :style => "margin-left:1em;"%>
+          </div>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
