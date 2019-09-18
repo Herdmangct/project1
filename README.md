@@ -1,24 +1,32 @@
-# README
+# Project 1: The Pantry
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Description
+An inventory management system for small restaurants built with Ruby on Rails for the backend and jQuery for the frontend. 
 
-Things you may want to cover:
+### How to use 
+- click the link at the end of the page to be taken to the live web app (make sure you have your browser in full screen mode because responsiveness is yet to be added) 
+- to login to admin use username: "Graham@ga.co" and password: "chicken"
 
-* Ruby version
+### Features
+- Users and user authentication (login and sign-up)
+- Admin users
+- Ability to edit your account
+- Ability to add meals and ingredients
 
-* System dependencies
+### Future Features
+- Responsive web design
+- Automatic stock calculation 
+- Link to email suppliers
 
-* Configuration
+### Technologies
+- Ruby on Rails
+- Javascript
+- jQuery
+- HTML
+- CSS
 
-* Database creation
+### Thank You
+- Joel and Rashida for inspiring me every single day.
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Link to the Web App
+- https://the1pantry.herokuapp.com/
