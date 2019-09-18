@@ -24,6 +24,7 @@ An inventory management system for small restaurants built with Ruby on Rails fo
 - jQuery
 - HTML
 - CSS
+- Bootstrap
 
 ### Thank You
 - Joel and Rashida for inspiring me every single day.
