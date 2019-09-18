@@ -9,7 +9,8 @@ An inventory management system for small restaurants built with Ruby on Rails fo
 ### How to use
 
 - click the link at the end of the page to be taken to the live web app (make sure you have your browser in full screen mode because responsiveness is yet to be added)
-- to login to admin use username: "Graham@ga.co" and password: "chicken"
+- Admin use username: "Graham@ga.co" and password: "chicken"
+- Normal user username: "CozyThai@ga.co" and password: "chicken"
 
 ### Features
 
