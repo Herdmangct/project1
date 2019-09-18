@@ -24,6 +24,10 @@ An inventory management system for small restaurants built with Ruby on Rails fo
 - Automatic stock calculation
 - Link to email suppliers
 
+### ERD (Entity Relationship Diagram)
+
+![ERD](/img/erd.png)
+
 ### Technologies
 
 - Ruby on Rails
